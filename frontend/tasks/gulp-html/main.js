@@ -3,7 +3,7 @@ function Task(gulp) {
   *  Rutas  
 	*/
 	var baseDirPug 		= __dirname + "/../../source/pug";
-	var pathPugDest 	= '../app/modules/';
+	var pathPugDest 	= '../app/modules/views/';
 	var pathPugSource = [	baseDirPug + '/*.pug',
 												baseDirPug + '/**/*.pug',
 												'!' + baseDirPug + '/_**/*.pug',
@@ -20,6 +20,7 @@ function Task(gulp) {
 			gPugLint					= require("gulp-pug-lint"),
 			gPlumberNotifier	= require("gulp-plumber-notifier"),
 			pugInheritance    = require("pug-inheritance"),
+			argv 							= require('yargs').argv,
 			gRename 					= require("gulp-rename");
 
 	/*
@@ -39,7 +40,7 @@ function Task(gulp) {
 				.pipe(gPlumberNotifier())
 				.pipe(gPugLint())
 				.pipe(gPug({
-					pretty: true,
+					pretty: argv.production ? false: true,
 					basedir: baseDirPug,
 					pug: pugCustom
 				}))

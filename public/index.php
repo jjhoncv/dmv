@@ -1,3 +1,3 @@
 <?php
-include('../../app/modules/index.phtml');
+include('../../app/modules/views/index.phtml');
 ?>
