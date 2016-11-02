@@ -2,9 +2,10 @@ function Task(gulp) {
 	/*
   *  Rutas  
 	*/
-	var baseDirPug 		= __dirname + "/../source/pug";
-	var pathPugDest 	= '../../modules/';
-	var pathPugSource = [	baseDirPug + '/**/*.pug',
+	var baseDirPug 		= __dirname + "/../../source/pug";
+	var pathPugDest 	= '../app/modules/';
+	var pathPugSource = [	baseDirPug + '/*.pug',
+												baseDirPug + '/**/*.pug',
 												'!' + baseDirPug + '/_**/*.pug',
 												'!' + baseDirPug + '/_**/**/*.pug',
 												'!' + baseDirPug + '/**/_*.pug']
@@ -14,10 +15,10 @@ function Task(gulp) {
 	*/
 
 	var pugNative 				= require("pug"),
+			runSequence 			= require("run-sequence")
 			gPug 							= require("gulp-pug"),
 			gPugLint					= require("gulp-pug-lint"),
 			gPlumberNotifier	= require("gulp-plumber-notifier"),
-			gRunSequence 			= require("gulp-run-sequence"),
 			pugInheritance    = require("pug-inheritance"),
 			gRename 					= require("gulp-rename");
 
@@ -34,7 +35,7 @@ function Task(gulp) {
 	var fn = {
 		compiler : function(pathSrc){
 			var pugCustom = utils.pugAdapter(pugNative);
-			return gulp.src(pathSrc, { base : baseDirPug })
+			return gulp.src(pathSrc, { base : baseDirPug })				
 				.pipe(gPlumberNotifier())
 				.pipe(gPugLint())
 				.pipe(gPug({
@@ -74,7 +75,7 @@ function Task(gulp) {
 
 	var runTasks = function(){
 		gulp.task('html', function(cb) {
-		  return gRunSequence('html:compiler', cb);         
+		  return runSequence('html:compiler', cb);         
 		});
 	}
 

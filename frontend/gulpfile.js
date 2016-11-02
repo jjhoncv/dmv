@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp 					= require('gulp'),
-		gRunSequence 	= require("gulp-run-sequence");
+		runSequence 	= require("run-sequence")
 
 var runTask = function (nameTask){
   var Task = require("./tasks/" + nameTask + "/main");
@@ -18,5 +18,5 @@ taskHTML.run();
 
 
 gulp.task('default', function (cb) {
-    gRunSequence('html', cb);
+    runSequence('html', cb);
 });
