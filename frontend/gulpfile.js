@@ -12,9 +12,9 @@ var taskHTML = runTask("gulp-html");
 taskHTML.run();
 
 runTask("gulp-bower");
-
-
-
+runTask("gulp-watch").run({  
+  html  : taskHTML.watcher
+});
 
 gulp.task('default', function (cb) {
     runSequence('html','bower', cb);

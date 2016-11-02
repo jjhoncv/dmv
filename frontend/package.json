@@ -10,8 +10,10 @@
   "author": "Jhonnatan Castro",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.17.5",
     "gulp": "^3.9.1",
     "gulp-bower": "0.0.13",
+    "gulp-connect-php": "0.0.8",
     "gulp-plumber-notifier": "0.0.3",
     "gulp-pug": "^3.1.0",
     "gulp-pug-lint": "^0.1.6",
