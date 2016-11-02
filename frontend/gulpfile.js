@@ -1,0 +1,22 @@
+'use strict';
+
+var gulp 					= require('gulp'),
+		gRunSequence 	= require("gulp-run-sequence");
+
+var runTask = function (nameTask){
+  var Task = require("./tasks/" + nameTask + "/main");
+  return new Task(gulp);
+};
+
+var taskHTML = runTask("gulp-html");
+taskHTML.run();
+
+/*runTask("gulp-watch").run({
+  //js    : taskJS.watcher,
+  html  : taskHTML.watcher
+});*/
+
+
+gulp.task('default', function (cb) {
+    gRunSequence('html', cb);
+});
