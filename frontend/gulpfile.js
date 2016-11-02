@@ -11,6 +11,8 @@ var runTask = function (nameTask){
 var taskHTML = runTask("gulp-html");
 taskHTML.run();
 
+runTask("gulp-bower");
+
 /*runTask("gulp-watch").run({
   //js    : taskJS.watcher,
   html  : taskHTML.watcher
@@ -18,5 +20,5 @@ taskHTML.run();
 
 
 gulp.task('default', function (cb) {
-    runSequence('html', cb);
+    runSequence('html','bower', cb);
 });
