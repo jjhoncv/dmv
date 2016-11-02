@@ -13,10 +13,7 @@ taskHTML.run();
 
 runTask("gulp-bower");
 
-/*runTask("gulp-watch").run({
-  //js    : taskJS.watcher,
-  html  : taskHTML.watcher
-});*/
+
 
 
 gulp.task('default', function (cb) {
