@@ -20,8 +20,8 @@ function Task(gulp) {
 			});
 			
 			//gulp.watch(path.src.js, ["js", browserSync.reload]);
-			gulp.watch('source/pug/*.pug', ["html", browserSync.reload]);
-			//gulp.watch("./stylus/**/*.styl", ["css", browserSync.reload]);
+			gulp.watch('source/pug/*.pug', ['html', browserSync.reload]);
+			gulp.watch("source/pug/*.styl", ['css', browserSync.reload]);
 			gulp.watch('../**/*.php', browserSync.reload);	
 		});
 

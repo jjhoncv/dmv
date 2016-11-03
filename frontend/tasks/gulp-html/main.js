@@ -15,7 +15,7 @@ function Task(gulp) {
 	*/
 
 	var pugNative 				= require("pug"),
-			runSequence 			= require("run-sequence")
+			runSequence 			= require("run-sequence"),
 			gPug 							= require("gulp-pug"),
 			gPugLint					= require("gulp-pug-lint"),
 			gPlumberNotifier	= require("gulp-plumber-notifier"),
