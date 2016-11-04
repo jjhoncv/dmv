@@ -4,7 +4,7 @@ var gulp 					= require('gulp'),
 		runSequence 	= require("run-sequence")
 
 var runTask = function (nameTask){
-  var Task = require("./tasks/" + nameTask + "/main");
+  var Task = require("./tasks/" + nameTask);
   return new Task(gulp);
 };
 
@@ -14,13 +14,18 @@ taskHTML.run();
 var taskCSS = runTask("gulp-css");
 taskCSS.run();
 
+var taskJS = runTask("gulp-js");
+taskJS.run();
+
 runTask("gulp-bower");
+runTask("gulp-clean");
+runTask("gulp-fonts");
 
 runTask("gulp-watch").run({  
   html  : taskHTML.watcher,
   css   : taskCSS.watcher
 });
 
-gulp.task('default', function (cb) {
-    runSequence('html','bower', 'css', cb);
+gulp.task('default', ['clean'], function (cb) {
+  runSequence('html', 'fonts', cb);
 });
