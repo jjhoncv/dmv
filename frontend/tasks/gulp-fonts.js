@@ -1,7 +1,7 @@
 function Task(gulp) {
 	
 	var baseDirSource         = __dirname + "/../source",
-      baseDirStylus         = baseDirSource + "/stylus";
+      baseDirStylus         = baseDirSource + "/stylus",
       dockerPathInputFonts  = baseDirSource + "/fonts",
       pathStylusDest        = '../public/static/css/dist';
 
