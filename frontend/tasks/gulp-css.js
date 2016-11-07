@@ -6,8 +6,7 @@ function Task(gulp) {
 	var pathStylusDest 		= '../public/static/css/dist';
 	var pathStylusSource 	= [	baseDirStylus + '/*.styl',
 														baseDirStylus + '/**/*.styl',
-														'!' + baseDirStylus + '/_.styl',
-														'!' + baseDirStylus + '/fonts.styl',
+														'!' + baseDirStylus + '/_.styl',													
 														'!' + baseDirStylus + '/_**/*.styl',
 														'!' + baseDirStylus + '/_**/**/*.styl',
 														'!' + baseDirStylus + '/**/_*.styl']

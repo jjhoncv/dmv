@@ -19,7 +19,7 @@ function Task(gulp) {
 				});
 			});
 			
-			//gulp.watch(path.src.js, ["js", browserSync.reload]);
+			gulp.watch(['source/es6/*.es6','source/es6/**/*.es6','source/es6/**/**/*.es6'], objWatchers.js);
 			gulp.watch('source/pug/*.pug', objWatchers.html);
 			gulp.watch("source/stylus/*.styl", objWatchers.css);
 			gulp.watch('../**/*.php', browserSync.reload);	

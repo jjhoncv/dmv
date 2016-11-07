@@ -5,7 +5,9 @@ function Task(gulp) {
   dockerPathOutputImg   = dockerPathOutputStatic + "/img"
   dockerPathOutputFonts = dockerPathOutputStatic + "/fonts"
   dockerPathOutputJs    = dockerPathOutputStatic + "/js"
-  dockerPathOutputCss   = dockerPathOutputStatic + "/css"  
+  dockerPathOutputCss   = dockerPathOutputStatic + "/css" 
+  baseDirStylusConfig   =  __dirname + "/../source/stylus/_config";
+
   
   var del         = require("del");
 
@@ -14,7 +16,11 @@ function Task(gulp) {
       dockerPathOutputImg,
       dockerPathOutputFonts,
       dockerPathOutputJs,
-      dockerPathOutputCss
+      dockerPathOutputCss,
+      baseDirStylusConfig + "/fonts.styl",
+      baseDirStylusConfig + "/icons.styl",
+      baseDirStylusConfig + "/*_sprite.styl",
+      dockerPathOutputStatic + "/libs/dist"
     ], { force: true }, cb);
   });
 

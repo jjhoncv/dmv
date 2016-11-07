@@ -1,7 +1,7 @@
 function Task(gulp) {
 	
-	var baseDirSource         = __dirname + "/../source",
-      baseDirStylus         = baseDirSource + "/stylus",
+	var baseDirSource         = __dirname + "/../source/static",
+      baseDirStylus         = baseDirSource + "/../stylus",
       dockerPathInputFonts  = baseDirSource + "/fonts",
       pathStylusDest        = '../public/static/css/dist';
 
@@ -28,11 +28,11 @@ function Task(gulp) {
 
     return gulp.src(dockerPathInputFonts + "/_template/fonts.styl")     
       .pipe(consolidate("lodash", { dirList: dirList }))
-      .pipe(gulp.dest(baseDirStylus))      
+      .pipe(gulp.dest(baseDirStylus + "/_config"))      
   });
 
   gulp.task("fonts:css", function(cb){    
-    return gulp.src(baseDirStylus + "/fonts.styl")      
+    return gulp.src(baseDirStylus + "/_config/fonts.styl")      
       .pipe(plumberNotifier())
       .pipe(stylus())
       .pipe(gulpif(argv.production, uglifycss({ "maxLineLen": 0, "uglyComments": true })))
@@ -41,7 +41,7 @@ function Task(gulp) {
 
 
   gulp.task('fonts', function(cb) {
-    return runSequence('fonts:compile', 'fonts:css', cb);         
+    return runSequence('fonts:compile', 'fonts:css', 'copy:fonts', cb);         
   });
 }
 

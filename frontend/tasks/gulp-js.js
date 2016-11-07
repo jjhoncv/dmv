@@ -21,7 +21,7 @@ function Task(gulp) {
       uglify            = require("gulp-uglify"),
       argv              = require('yargs').argv,
       browserSync       = require('browser-sync'),
-      babel             = require('gulp-babel'),      
+      babel             = require('gulp-babel'),
       recursiveConcat   = require('gulp-recursive-concat'),
       //xo                = require('gulp-xo'),
       gulpif            = require("gulp-if"),
@@ -63,7 +63,7 @@ function Task(gulp) {
       .pipe(plumberNotifier())
       .pipe(jshint.reporter('jshint-stylish'))
       .pipe(jshint.reporter('fail'))
-      .on("end", function(){
+      .on("data", function(){
         if (typeof cb === 'function'){
           cb()
         }
