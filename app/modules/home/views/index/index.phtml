@@ -29,13 +29,10 @@ html
 		nav.navbar.navbar-default
 			.container
 				ul.nav.navbar-nav
-					li.active
-						a Artistas
-					li 
-						a Albunes
-					li 
-						a Letras
-
+					- var menu = locals.menu;
+					for item in locals.menu
+						li()&attributes(item.attr)
+							a=item.label
 
 		.container
 			.col-xs-6

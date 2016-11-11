@@ -3,7 +3,7 @@ function Task(gulp) {
   *  Rutas  
 	*/
 	var baseDirPug 		= __dirname + "/../source/pug";
-	var pathPugDest 	= '../app/modules/views/';
+	var pathPugDest 	= '../app/';
 	var pathPugSource = [	baseDirPug + '/*.pug',
 												baseDirPug + '/**/*.pug',
 												'!' + baseDirPug + '/_**/*.pug',
@@ -22,6 +22,8 @@ function Task(gulp) {
 			pugInheritance    = require("pug-inheritance"),
 			argv 							= require('yargs').argv,
 			browserSync 			= require('browser-sync'),
+			fs 								= require('fs'),
+			path 							= require('path'),
 			rename 						= require("gulp-rename");
 
 	/*
@@ -63,12 +65,18 @@ function Task(gulp) {
 			var pugCustom = pugAdapter(pugNative);
 			return gulp.src(pathSrc, { base : baseDirPug })				
 				.pipe(plumberNotifier())
-				.pipe(pugLint())
-				.pipe(pug({
-					pretty: argv.production ? false: true,
-					basedir: baseDirPug,
-					pug: pugCustom
-				}))
+				.pipe(pugLint())				
+				.on("data",function(file){
+					var directory = file.path;
+					console.log("directory", directory);
+					console.log("directory.dirname", path.dirname(directory));
+					return pug({
+						pretty: argv.production ? false: true,
+						basedir: baseDirPug,
+						//locals: JSON.parse( fs.readFileSync(baseDirPug + '/index.json', { encoding: 'utf8' }) ),
+						pug: pugCustom
+					})
+				})
 				.pipe(rename({ extname: ".phtml" }))
 				.pipe(gulp.dest(pathPugDest))
 				.on("end", function(){
