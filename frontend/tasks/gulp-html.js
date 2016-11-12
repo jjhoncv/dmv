@@ -65,15 +65,15 @@ function Task(gulp) {
 			var pugCustom = pugAdapter(pugNative);
 			return gulp.src(pathSrc, { base : baseDirPug })				
 				.pipe(plumberNotifier())
-				.pipe(pugLint())				
+				.pipe(pugLint())
+				.pipe()		
 				.on("data",function(file){
-					var directory = file.path;
-					console.log("directory", directory);
-					console.log("directory.dirname", path.dirname(directory));
+					var filetmp = file;
+					//var fileDataJSON = filetmp.path.replace(/\/pug/,"/data").replace(/\.pug/,".data.json");
 					return pug({
 						pretty: argv.production ? false: true,
 						basedir: baseDirPug,
-						//locals: JSON.parse( fs.readFileSync(baseDirPug + '/index.json', { encoding: 'utf8' }) ),
+						//locals: JSON.parse( fs.readFileSync(fileDataJSON, { encoding: 'utf8' }) ),
 						pug: pugCustom
 					})
 				})

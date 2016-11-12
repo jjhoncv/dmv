@@ -1,0 +1,17 @@
+{
+	"menu":
+		[
+			{				
+				"attr": {
+					"class":"active"
+				},
+				"label": "Artistas"
+			},
+			{				
+				"label": "Albunes5"
+			},
+			{				
+				"label": "Letras"
+			}
+		]
+}
