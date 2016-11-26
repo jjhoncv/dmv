@@ -1,0 +1,36 @@
+/*{
+	"menu":
+		[
+			{				
+				"attr": {
+					"class":"active"
+				},
+				"label": "Artistas"
+			},
+			{				
+				"label": "Albunes5"
+			},
+			{				
+				"label": "Letras"
+			},
+			{				
+				"label": "Login",
+				"attr": {
+					"class":"active"
+				}
+			}
+		],
+	"row": "$isRow == true"
+}*/
+{
+	"menu":
+		[
+			{
+				"label": "Login",
+				"attr": {
+					"class":"active"
+				}
+			}
+		],
+	"row": "$isRow == true"
+}
