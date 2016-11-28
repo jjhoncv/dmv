@@ -3,12 +3,12 @@ function Task(gulp) {
   *  Rutas  
 	*/
 	var baseDirPug 		= __dirname + "/../source/pug";
-	var pathPugDest 	= '../app/modules/views/';
+	var pathPugDest 	= '../app/';
 	var pathPugSource = [	baseDirPug + '/*.pug',
 												baseDirPug + '/**/*.pug',
 												'!' + baseDirPug + '/_**/*.pug',
 												'!' + baseDirPug + '/_**/**/*.pug',
-												'!' + baseDirPug + '/**/_*.pug']
+												'!' + baseDirPug + '/**/_*.pug'];
 
 	/*
   *  npm dependientes
@@ -22,6 +22,9 @@ function Task(gulp) {
 			pugInheritance    = require("pug-inheritance"),
 			argv 							= require('yargs').argv,
 			browserSync 			= require('browser-sync'),
+			fs 								= require('fs'),
+			path 							= require('path'),			
+			foreach 					= require('gulp-foreach'),
 			rename 						= require("gulp-rename");
 
 	/*
@@ -54,22 +57,34 @@ function Task(gulp) {
     return pug;
   }
 
+  var getDataJson = function(file){  	
+		var dataJSON = {}
+		if (fs.existsSync(file)) {
+			dataJSON = JSON.parse(fs.readFileSync(file, { encoding: 'utf8' }));
+		}
+		return dataJSON;
+  }
+
 	/*
 	*  code
 	*/	
 
 	var fn = {
-		compiler : function(pathSrc, cb){			
+		compiler : function(pathSrc, cb){
 			var pugCustom = pugAdapter(pugNative);
-			return gulp.src(pathSrc, { base : baseDirPug })				
-				.pipe(plumberNotifier())
-				.pipe(pugLint())
-				.pipe(pug({
-					pretty: argv.production ? false: true,
-					basedir: baseDirPug,
-					pug: pugCustom
-				}))
-				.pipe(rename({ extname: ".phtml" }))
+			return gulp.src(pathSrc, { base : baseDirPug })
+				.pipe(foreach(function(stream, file){
+					var fileDataJson =  file.path.replace(/\/pug/, "/data").replace(/\.pug/, ".data.json");					
+					return stream
+						.pipe(plumberNotifier())
+						.pipe(pug({
+							pretty 	: argv.production ? false: true,
+							basedir : baseDirPug,
+							locals	: getDataJson(fileDataJson),
+							pug 		: pugCustom
+						}))
+						.pipe(rename({ extname: ".php" }))
+				}))				
 				.pipe(gulp.dest(pathPugDest))
 				.on("end", function(){
 					if (typeof cb === 'function'){

@@ -1,3 +1,7 @@
+/*
+falta hacer el clean de source/scripts
+*/
+
 function Task(gulp) {
   /*
   *  Rutas  

@@ -1,0 +1,12 @@
+{
+	"menu":
+		[
+			{
+				"label": "Login",
+				"attr": {
+					"class":"active"
+				}
+			}
+		],
+	"row": "$isRow == true"
+}
