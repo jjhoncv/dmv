@@ -1,17 +1,18 @@
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../app/core/core.php';
 
 $klein = new \Klein\Klein();
 
-$klein->respond('GET', '/', function () {
-	include('../app/modules/home/views/index/index.php');
-});
+/* home */
+$klein->with("/", "../app/modules/home/controllers/indexController.php");
 
-$klein->respond('GET', '/ficha/nuevo', function () {
-	include( __DIR__ .  '/../app/config/routers.php');
-	include('../app/modules/ficha/views/index/nuevo.php');
-});
+/* search */
+$klein->with("/search", "../app/modules/search/controllers/indexController.php");
+
+/*login*/
+$klein->with("/login", "../app/modules/login/controllers/indexController.php");
 
 $klein->dispatch();
 ?>

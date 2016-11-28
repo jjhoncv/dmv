@@ -2,7 +2,7 @@
 @import '_config/main_sprite.styl'
 @import nib
 
-p
+.gradient
 	background linear-gradient(top, white, black)
 
 section
@@ -16,5 +16,16 @@ aside
 article
 	column(2/3)
 
-p
+.icon_visa
 	sprite($icon_verified_visa)
+
+footer
+	position fixed
+	width 100%	
+	padding-top 20px
+	bottom 0
+	background #f8f8f8
+	border 1px solid #e7e7e7
+
+main
+	min-height 200px

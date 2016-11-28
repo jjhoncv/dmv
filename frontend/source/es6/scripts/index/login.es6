@@ -1,3 +1,11 @@
+$("form").on("submit", function(e){
+  e.preventDefault();
+  $.post('/login/authenticate', $("form").serialize(), function(data){
+    //console.log(data);
+  },'json');
+});
+
+
 function statusChangeCallback(response) {
   console.log('statusChangeCallback');
   console.log(response);
@@ -28,7 +36,7 @@ function checkLoginState() {
 }
 
 $(window).on("load", function(){  
-  window.fbAsyncInit = function() {
+  window.fbAsyncInit = function(){
     FB.init({
       appId      : '231693037252894',
       cookie     : true,  // enable cookies to allow the server to access 
@@ -40,7 +48,7 @@ $(window).on("load", function(){
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
-  }
+  };
 })
 
 

@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="Demo project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="<?php echo $config['host']?>/static/libs/dist/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="<?php echo $config['host']?>/static/css/dist/fonts.css">
-    <link rel="stylesheet" href="<?php echo $config['host']?>/static/css/dist/index.css">
+    <link rel="stylesheet" href="<?php echo _STATIC_ ?>/libs/dist/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="<?php echo _STATIC_ ?>/css/dist/fonts.css">
+    <link rel="stylesheet" href="<?php echo _STATIC_ ?>/css/dist/index.css">
     <script type="text/javascript">
       var yOSON = {
         "module": "home",
@@ -39,8 +39,8 @@
       <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
     </div>
   </body>
-  <script src="<?php echo $config['host']?>/static/libs/dist/jquery/dist/jquery.js" type="text/javascript"></script>
-  <script src="<?php echo $config['host']?>/static/libs/dist/yosonjs/dist/yoson.js" type="text/javascript"></script>
-  <script src="<?php echo $config['host']?>/static/js/dist/scripts/index.js" type="text/javascript"></script>
-  <script src="<?php echo $config['host']?>/static/js/dist/libs/yosonjs-utils.js" type="text/javascript"></script>
+  <script src="<?php echo _STATIC_ ?>/libs/dist/jquery/dist/jquery.js" type="text/javascript"></script>
+  <script src="<?php echo _STATIC_ ?>/libs/dist/yosonjs/dist/yoson.js" type="text/javascript"></script>
+  <script src="<?php echo _STATIC_ ?>/js/dist/scripts/index.js" type="text/javascript"></script>
+  <script src="<?php echo _STATIC_ ?>/js/dist/libs/yosonjs-utils.js" type="text/javascript"></script>
 </html>
