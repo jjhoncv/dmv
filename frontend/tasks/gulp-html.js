@@ -8,6 +8,7 @@ function Task(gulp) {
 												baseDirPug + '/**/*.pug',
 												'!' + baseDirPug + '/_**/*.pug',
 												'!' + baseDirPug + '/_**/**/*.pug',
+												'!' + baseDirPug + '/**/_**/*.pug',
 												'!' + baseDirPug + '/**/_*.pug'];
 
 	/*

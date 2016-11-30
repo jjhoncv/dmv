@@ -1,4 +1,4 @@
-extends /_layout/layout.pug
+extends /admin/_layout/layout.pug
 
 block content
 	body    
@@ -13,9 +13,13 @@ block content
 		main
 			.container
 				form
-					input(type="text" name="username" placeholder="username")
-					input(type="text" name="password" placeholder="password")
-					input(type="submit")
+					.form-group
+						label(for="username") username:
+						input.form-control(type="text" name="username" placeholder="username" id="username")
+					.form-group
+						label(for="password") password:
+						input.form-control(type="text" name="password" placeholder="password" id="password")
+					input.btn.btn-default(type="submit")
 
 		footer
 			.container
