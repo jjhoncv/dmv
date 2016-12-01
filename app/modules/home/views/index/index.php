@@ -105,7 +105,11 @@
                 console.log('User cancelled login or did not fully authorize.');
             }
         },
-        {scope:'email'}
+        {
+          scope: 'email,public_profile',
+          return_scopes: true,
+          auth_type: 'rerequest'
+        }
         );
   }
 </script>
