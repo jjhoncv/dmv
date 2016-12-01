@@ -35,7 +35,7 @@
   function checkLoginState() {    
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-    }, { auth_type: 'reauthenticate' });
+    }, { auth_type: 'rerequest' });
   }
 
   window.fbAsyncInit = function() {
