@@ -1,0 +1,25 @@
+<p><a href="/admin/products/new">nuevo</a></p>
+<table>
+	<thead>
+		<tr>
+			<th>id</th>
+			<th width="200">description</th>
+			<th>price</th>
+			<th>weight</th>
+			<th>options</th>
+		</tr>		
+	</thead>
+	<tbody>
+		<?php foreach($this->products as $product):?>
+		<tr>
+			<td><?php echo $product['id']?></td>
+			<td width="200"><?php echo $product['description']?></td>
+			<td><?php echo $product['price']?></td>
+			<td><?php echo $product['weight']?></td>
+			<td><a href="/admin/products/edit/<?php echo $product['id']?>">edit</a> | 
+					<a href="/admin/products/delete/<?php echo $product['id']?>">delete</a>
+			</td>
+		</tr>
+		<?php endforeach?>		
+	</tbody>
+</table>

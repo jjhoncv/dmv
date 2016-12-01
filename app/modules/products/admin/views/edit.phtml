@@ -1,0 +1,15 @@
+<form action="/admin/products/update/<?php echo $this->products['id'];?>" method="post">
+	<fieldset>
+		<label for="description">description:</label>
+		<input type="text" name="description" value="<?php echo $this->products['description'];?>">
+	</fieldset>
+	<fieldset>
+		<label for="price">price:</label>
+		<input type="text" name="price" value="<?php echo $this->products['price'];?>">
+	</fieldset>
+	<fieldset>
+		<label for="weight">weight:</label>
+		<input type="text" name="weight" value="<?php echo $this->products['weight'];?>">
+	</fieldset>
+	<input type="submit">
+</form>
