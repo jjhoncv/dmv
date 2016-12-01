@@ -106,8 +106,8 @@
             }
         },
         {
-          scope: 'email,public_profile',
-          auth_type: 'reauthenticate'
+          scope: 'email,public_profile'
+          //auth_type: 'reauthenticate'
           
           /*return_scopes: true,
           auth_type: 'rerequest'*/
