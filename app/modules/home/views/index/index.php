@@ -2,7 +2,7 @@
 require '../app/modules/facebook/facebook.php';
 $facebook = new Facebook(array(
   'appId'  => '231693037252894',
-  'secret' => '311585a9a89d00da75d86784f525f1fc',
+  'secret' => '311585a9a89d00da75d86784f525f1fc'
 ));
 // See if there is a user from a cookie
 $user = $facebook->getUser();
