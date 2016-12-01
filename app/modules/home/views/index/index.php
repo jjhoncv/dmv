@@ -32,10 +32,21 @@
   // This function is called when someone finishes with the Login
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
-  function checkLoginState() {    
+  function checkLoginState() {   
+
+    FB.login( function( response ) {
+      if (response.status == 'connected') {
+        document.getElementById('status').innerHTML = 'nuevo login'
+      }
+    },{
+        scope: 'email,public_profile',
+        return_scopes: true,
+        auth_type: 'rerequest'
+     });
+
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-    }, { auth_type: 'rerequest' });
+    });
   }
 
   window.fbAsyncInit = function() {
