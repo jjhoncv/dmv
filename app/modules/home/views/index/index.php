@@ -36,7 +36,7 @@
 
     FB.login( function( response ) {
       if (response.status == 'connected') {
-        document.getElementById('status').innerHTML = 'nuevo login'
+        document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
       }
     },{
         scope: 'email,public_profile',
