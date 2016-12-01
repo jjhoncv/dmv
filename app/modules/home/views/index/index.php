@@ -106,9 +106,9 @@
             }
         },
         {
-          scope: 'email,public_profile',
-          return_scopes: true,
-          auth_type: 'rerequest'
+          scope: 'email,public_profile'
+          /*return_scopes: true,
+          auth_type: 'rerequest'*/
         }
         );
   }
