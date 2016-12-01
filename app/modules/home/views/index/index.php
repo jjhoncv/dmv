@@ -106,8 +106,7 @@
             }*/
         },
         {
-          scope: 'publish_actions',
-          return_scopes: true
+          scope: 'email'
           //auth_type: 'reauthenticate'
           
           /*return_scopes: true,
