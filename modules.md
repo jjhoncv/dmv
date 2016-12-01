@@ -1,15 +1,18 @@
-cada modulo trabajar por separado
-
-Modulo::Productos
-
 / model
 	- Productos.php
 
 / DAO
 	- productosDAO.php
+		* add
+		* delete
+		* udpate
+		* list
 
 / controller
 	- indexController.php
+		* delete [:id]
+		* update [:id]
+		* add    [:data]
 
 / views
 	- new.phtml
@@ -43,8 +46,18 @@ Modulo::Productos
 			- edit.styl
 			- list.styl
 
-/- frontend
-	- layout.pug
-	/- _partials
-		- header.pug
-		- footer.pug
+
+::views::
+http://www.dmv.com/admin/products          	[list]
+http://www.dmv.com/admin/productos/edit/5   [edit]
+http://www.dmv.com/admin/productos/new      [new]
+
+::actions::
+http://www.dmv.com/admin/products/delete/5 	[delete]
+http://www.dmv.com/admin/products/update/5 	[update]
+http://www.dmv.com/admin/products/add 			[add]
+
+
+
+
+
