@@ -71,18 +71,8 @@
   // These three cases are handled in the callback function.
 
   FB.getLoginStatus(function(response) {
-    //statusChangeCallback(response);
-    FB.login( function( response ) {
-      if (response.status == 'connected') {
-        document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
-      }
-    },{
-      scope: 'email,public_profile',
-      return_scopes: true,
-      auth_type: 'rerequest'
-    });
+    statusChangeCallback(response);
   });
-    
 
   };
 
