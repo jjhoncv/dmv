@@ -33,7 +33,7 @@
   // code below.
   function checkLoginState() {   
 
-    FB.login( function( response ) {
+    /*FB.login( function( response ) {
       if (response.status == 'connected') {
         document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
       }
@@ -41,11 +41,11 @@
         scope: 'email,public_profile',
         return_scopes: true,
         auth_type: 'rerequest'
-     });
+     });*/
 
-    /*FB.getLoginStatus(function(response) {
+    FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-    });*/
+    });
   }
 
   window.fbAsyncInit = function() {
