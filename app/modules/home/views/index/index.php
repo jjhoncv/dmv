@@ -95,7 +95,7 @@
     });*/
     FB.login(
         function(response) {
-            if (response.authResponse) {
+           /* if (response.authResponse) {
                console.log('Welcome!  Fetching your information.... ');
                FB.api('/me', function(response) {
                    console.log('Good to see you, ' + response.email + '.');
@@ -103,10 +103,11 @@
                });
             } else {
                 console.log('User cancelled login or did not fully authorize.');
-            }
+            }*/
         },
         {
-          scope: 'email,public_profile'
+          scope: 'publish_actions',
+          return_scopes: true
           //auth_type: 'reauthenticate'
           
           /*return_scopes: true,
