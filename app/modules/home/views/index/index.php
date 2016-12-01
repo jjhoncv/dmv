@@ -33,6 +33,10 @@
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
   function checkLoginState() {
+    FB.login(function(response) {
+    
+    }, { auth_type: 'reauthenticate' })
+    
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
