@@ -6,8 +6,8 @@ $klein = new \Klein\Klein();
 
 $klein->with('/', function () use ($klein) {
 
-    $klein->respond('GET', '/?', function ($request, $response) {
-      
+    $klein->respond('GET', '/?', function ($request, $response, $service, $app) {  
+      $service->render('../app/modules/home/views/index/index.php');
     });
 
     $klein->respond('POST', '/?', function ($request, $response) {
