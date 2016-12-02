@@ -16,17 +16,16 @@ $klein->with('/', function () use ($klein) {
 
 });
 
-$klein->with('/admin', function () use ($klein) {
+$klein->with("/admin", '../app/modules/admin/public/index.php');
+
+/*$klein->with('/admin', function () use ($klein) {
 
   $klein->respond('GET', '/?', function ($request, $response, $service, $app) {  
-  	$service->render('../app/admin/modules/dashboard/view/index/index.php');
+  	$klein->with("/", "../app/modules/home/controllers/indexController.php");
   });
 
-  /*$klein->respond('POST', '/?', function ($request, $response) {
-    echo "hola POST home"; 
-  });*/
 
-});
+});*/
 
 $klein->respond(function ($request, $response, $service, $app) use ($klein) {
   $app->register('db', function() {
@@ -44,11 +43,11 @@ $klein->with('/admin/products', function () use ($klein) {
     $query->execute();
     $data = $query->fetchAll();
 
-    $service->render('../app/modules/products/admin/views/list.phtml', array("products" => $data));
+    $service->render('../app/modules/products/views/list.phtml', array("products" => $data));
   });
 
   $klein->respond('GET', '/new', function ($request, $response, $service, $app) {  
-    $service->render('../app/modules/products/admin/views/new.phtml');
+    $service->render('../app/modules/products/views/new.phtml');
   });
 
   $klein->respond('POST', '/add', function ($request, $response, $service, $app) {  
@@ -80,7 +79,7 @@ $klein->with('/admin/products', function () use ($klein) {
     $query->execute();
     $data = $query->fetchAll();
 
-    $service->render('../app/modules/products/admin/views/edit.phtml', array("products" => $data[0]));
+    $service->render('../app/modules/products/views/edit.phtml', array("products" => $data[0]));
   });
 
 

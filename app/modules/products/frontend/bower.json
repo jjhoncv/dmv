@@ -1,0 +1,17 @@
+{
+  "name": "frontend",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Jan Sanchez <joejansanchez@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jjhoncv/dmv",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

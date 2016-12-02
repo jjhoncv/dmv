@@ -2,3 +2,4 @@ node_modules
 app/modules/views
 public/static
 public/vendor
+dist
