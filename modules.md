@@ -19,14 +19,13 @@
 	- edit.phtml
 	- list.phtml
 
-/ admin
-	/ public
-		- index.php
-		
-		/ static
-			/ js
-			/ css
-			/ img
+/ public
+	- index.php
+	
+	/ static
+		/ js
+		/ css
+		/ img
 
 /- frontend
 	/- source

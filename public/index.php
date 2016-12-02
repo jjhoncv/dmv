@@ -36,6 +36,8 @@ $klein->respond(function ($request, $response, $service, $app) use ($klein) {
 
 $klein->with('/admin/products', function () use ($klein) {
 
+  // controller productoController
+
   $klein->respond('GET', '/?', function ($request, $response, $service, $app) {
     
     $query = $app->db->prepare('SELECT * FROM products');
