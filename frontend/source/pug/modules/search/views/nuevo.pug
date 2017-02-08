@@ -1,0 +1,12 @@
+extends /_layout/layout.pug
+
+block content
+	- var menu = [{"label": "Login","attr": {"class":"active"}}]
+	nav.navbar.navbar-default
+		.container
+			ul.nav.navbar-nav
+				for item in menu
+					li()&attributes(item.attr)
+						a=item.label
+	.container
+		fb:login-button(scope="public_profile,email" onlogin="checkLoginState();")

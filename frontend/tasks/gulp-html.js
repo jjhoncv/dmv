@@ -75,16 +75,16 @@ function Task(gulp) {
 			var pugCustom = pugAdapter(pugNative);
 			return gulp.src(pathSrc, { base : baseDirPug })
 				.pipe(foreach(function(stream, file){
-					var fileDataJson =  file.path.replace(/\/pug/, "/data").replace(/\.pug/, ".data.json");					
+					//var fileDataJson =  file.path.replace(/\/pug/, "/data").replace(/\.pug/, ".data.json");					
 					return stream
 						.pipe(plumberNotifier())
 						.pipe(pug({
 							pretty 	: argv.production ? false: true,
 							basedir : baseDirPug,
-							locals	: getDataJson(fileDataJson),
+							//locals	: getDataJson(fileDataJson),
 							pug 		: pugCustom
 						}))
-						.pipe(rename({ extname: ".php" }))
+						.pipe(rename({ extname: ".phtml" }))
 				}))				
 				.pipe(gulp.dest(pathPugDest))
 				.on("end", function(){

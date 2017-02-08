@@ -101,7 +101,7 @@ function Task(gulp) {
   });
 
   var runTasks = function(){
-    gulp.task('js', function(cb) {
+    gulp.task('js', ["clean:js"], function(cb) {
       return runSequence('js:hint','es6:compiler', 'js:concat', cb);         
     });
   }

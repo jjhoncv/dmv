@@ -47,7 +47,7 @@ function Task(gulp) {
 	}
 
 	var watcher = function(chunk){		
-		fn.compiler(chunk.path, browserSync.reload);	
+		fn.compiler(pathStylusSource, browserSync.reload);	
 	}
 
 	/*

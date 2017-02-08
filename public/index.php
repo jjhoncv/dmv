@@ -6,8 +6,13 @@ $klein = new \Klein\Klein();
 
 $klein->with('/', function () use ($klein) {
 
-    $klein->respond('GET', '/?', function ($request, $response, $service, $app) {  
-      $service->render('../app/modules/home/views/index/index.php');
+    $klein->respond('GET', '/?', function ($request, $response, $service, $app) {
+      
+      define('_MODULE_', "home");
+      define('_CONTROLLER_', "index");
+      define('_VIEW_', "index");
+
+      $service->render('../app/modules/home/views/index.phtml');
     });
 
     $klein->respond('POST', '/?', function ($request, $response) {
@@ -16,16 +21,26 @@ $klein->with('/', function () use ($klein) {
 
 });
 
-$klein->with("/admin", '../app/modules/admin/public/index.php');
+//$klein->with("/admin", '../app/modules/admin/public/index.php');
 
-/*$klein->with('/admin', function () use ($klein) {
+$klein->with('/admin', function () use ($klein) {
 
-  $klein->respond('GET', '/?', function ($request, $response, $service, $app) {  
-  	$klein->with("/", "../app/modules/home/controllers/indexController.php");
+  $klein->respond('GET', '/?', function ($request, $response, $service, $app) {
+    
+    define('_MODULE_', "admin");
+    define('_CONTROLLER_', "index");
+    define('_VIEW_', "index");
+    
+    $service->render('../app/modules/admin/views/index.phtml');
+
   });
 
+  /*$klein->respond('GET', '/?', function ($request, $response, $service, $app) {  
+  	$klein->with("/", "../app/modules/home/controllers/indexController.php");
+  });*/
 
-});*/
+
+});
 
 $klein->respond(function ($request, $response, $service, $app) use ($klein) {
   $app->register('db', function() {
