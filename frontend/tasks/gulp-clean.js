@@ -2,18 +2,18 @@ function Task(gulp) {
 	
 	pathDestStatic = "../public/static"
 
- /* dockerPathOutputImg   = dockerPathOutputStatic + "/img"
-  dockerPathOutputFonts = dockerPathOutputStatic + "/fonts"
-  dockerPathOutputJs    = dockerPathOutputStatic + "/js"
-  dockerPathOutputCss   = dockerPathOutputStatic + "/css" 
-  baseDirStylusConfig   =  __dirname + "/../source/stylus/_config";*/
+  dockerPathOutputImg   = pathDestStatic + "/img"
+  dockerPathOutputFonts = pathDestStatic + "/fonts"
+  dockerPathOutputJs    = pathDestStatic + "/js"
+  dockerPathOutputCss   = pathDestStatic + "/css" 
+  baseDirStylusConfig   =  __dirname + "/../source/stylus/_config";
 
 
   var pathEs6DestScripts = pathDestStatic + '/js/**/scripts';
   
   var del         = require("del");
 
-  /*gulp.task("clean", function (cb) {
+  gulp.task("clean", function (cb) {
     return del([
       dockerPathOutputImg,
       dockerPathOutputFonts,
@@ -22,9 +22,9 @@ function Task(gulp) {
       baseDirStylusConfig + "/fonts.styl",
       baseDirStylusConfig + "/icons.styl",
       baseDirStylusConfig + "/*_sprite.styl",
-      dockerPathOutputStatic + "/libs/dist"
+      pathDestStatic + "/libs/dist"
     ], { force: true }, cb);
-  });*/
+  });
 
   gulp.task("clean:js", function(cb){
     return del([pathEs6DestScripts], { force: true}, cb);

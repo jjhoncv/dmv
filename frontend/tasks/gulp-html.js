@@ -25,7 +25,7 @@ function Task(gulp) {
 			browserSync 			= require('browser-sync'),
 			fs 								= require('fs'),
 			path 							= require('path'),			
-			foreach 					= require('gulp-foreach'),
+			flatmap						= require('gulp-flatmap'),
 			rename 						= require("gulp-rename");
 
 	/*
@@ -74,7 +74,7 @@ function Task(gulp) {
 		compiler : function(pathSrc, cb){
 			var pugCustom = pugAdapter(pugNative);
 			return gulp.src(pathSrc, { base : baseDirPug })
-				.pipe(foreach(function(stream, file){
+				.pipe(flatmap(function(stream, file){
 					//var fileDataJson =  file.path.replace(/\/pug/, "/data").replace(/\.pug/, ".data.json");					
 					return stream
 						.pipe(plumberNotifier())

@@ -1,8 +1,8 @@
 {
-  "name": "skeletor",
+  "name": "dmv",
   "version": "1.0.0",
   "description": "estructura de proyecto basado en pug, es6, stylus",
-  "repository": "https://github.com/jjhoncv/skeletor.git",
+  "repository": "https://github.com/jjhoncv/dmv.git",
   "main": "gulpfile.js",
   "scripts": {
     "build": "gulp html"
@@ -20,7 +20,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-connect-php": "0.0.8",
     "gulp-consolidate": "^0.2.0",
-    "gulp-foreach": "^0.1.0",
+    "gulp-flatmap": "^1.0.0",
     "gulp-gzip": "^1.4.0",
     "gulp-iconfont": "^8.0.1",
     "gulp-if": "^2.0.1",
@@ -41,7 +41,6 @@
     "imagemin-svgo": "^5.2.0",
     "jeet": "^7.0.0",
     "jshint": "^2.9.4",
-    "jshint-stylish": "^2.0.1",
     "lodash": "^4.13.1",
     "merge": "^1.2.0",
     "nib": "^1.1.2",
@@ -49,7 +48,7 @@
     "pug": "^2.0.0-alpha6",
     "pug-inheritance": "^2.0.0",
     "run-sequence": "^1.2.2",
-    "rupture": "^0.6.2",
-    "yargs": "^6.3.0"
-  }
+    "rupture": "^0.6.2"
+  },
+  "dependencies": {}
 }
