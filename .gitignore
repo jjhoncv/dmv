@@ -3,4 +3,3 @@ app/modules/views
 public/static
 public/vendor
 dist
-frontend/yarn.lock
