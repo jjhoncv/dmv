@@ -74,7 +74,11 @@ function Task(gulp) {
 		compiler : function(pathSrc, cb){
 			var pugCustom = pugAdapter(pugNative);
 			return gulp.src(pathSrc, { base : baseDirPug })
+<<<<<<< HEAD
+				.pipe(foreach(function(stream, file){
+=======
 				.pipe(flatmap(function(stream, file){
+>>>>>>> 6f8293ba89c0d03c6343d96ed67059b4b8042752
 					//var fileDataJson =  file.path.replace(/\/pug/, "/data").replace(/\.pug/, ".data.json");					
 					return stream
 						.pipe(plumberNotifier())

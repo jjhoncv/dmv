@@ -64,8 +64,7 @@ function Task(gulp) {
       .pipe(jshint({
         esversion: 6
       }))
-      .pipe(plumberNotifier())
-      .pipe(jshint.reporter('jshint-stylish'))
+      .pipe(plumberNotifier())      
       .pipe(jshint.reporter('fail'))
       .on("data", function(){
         if (typeof cb === 'function'){

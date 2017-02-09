@@ -35,7 +35,10 @@
         </ul>
       </div>
     </nav>
+<<<<<<< HEAD
+=======
     <p>hola mundo 2</p>
+>>>>>>> 6f8293ba89c0d03c6343d96ed67059b4b8042752
     <div class="container">
       <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
     </div>

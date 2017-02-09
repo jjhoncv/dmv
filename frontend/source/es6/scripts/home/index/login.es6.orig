@@ -1,6 +1,10 @@
 $("form").on("submit", function(e){
   e.preventDefault();
+<<<<<<< HEAD
+  $.post('/login/authenticate', $("form").serialize(), function(data){
+=======
   $.post('/login/authenticatess, $("form").serialize(), function(data){
+>>>>>>> 6f8293ba89c0d03c6343d96ed67059b4b8042752
     //console.log(data);
   },'json');
 });

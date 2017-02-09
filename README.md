@@ -21,3 +21,4 @@ tasks:
 - gulp-sprites: generate sprite from folder "_sprites", each image must be in png format.
 - gulp-watch: builder one server and watch any file (es6, pug, styl) for compile only your dependencies.
 
+task minifiqued!!
