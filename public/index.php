@@ -4,22 +4,8 @@ require_once __DIR__ . '/../app/core/core.php';
 
 $klein = new \Klein\Klein();
 
-$klein->with('/', function () use ($klein) {
 
-    $klein->respond('GET', '/?', function ($request, $response, $service, $app) {
-      
-      define('_MODULE_', "home");
-      define('_CONTROLLER_', "index");
-      define('_VIEW_', "index");
-
-      $service->render('../app/modules/home/views/index.phtml');
-    });
-
-    $klein->respond('POST', '/?', function ($request, $response) {
-      echo "hola POST home"; 
-    });
-
-});
+$klein->with('/', '../app/modules/home/controllers/indexController.php');
 
 //$klein->with("/admin", '../app/modules/admin/public/index.php');
 

@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="Demo project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="<?php echo _STATIC_ ?>/libs/dist/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="<?php echo _STATIC_ ?>/css/dist/fonts.css">
-    <link rel="stylesheet" href="<?php echo _STATIC_ ?>/css/dist/<?php echo _MODULE_ ?>/<?php echo _VIEW_ ?>.css">
+    <link rel="stylesheet" href="<?php echo $this->staticUrl ?>/libs/dist/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="<?php echo $this->staticUrl ?>/css/dist/fonts.css">
+    <link rel="stylesheet" href="<?php echo $this->staticUrl ?>/css/dist/<?php echo $this->module ?>/<?php echo $this->action ?>.css">
     <script type="text/javascript">
       var yOSON = {
-        "module": "<?php echo _MODULE_ ?>",
-        "controller": "<?php echo _CONTROLLER_ ?>",
-        "action": "<?php echo _VIEW_ ?>",
+        "module": "<?php echo $this->module ?>",
+        "controller": "<?php echo $this->controller ?>",
+        "action": "<?php echo $this->action ?>",
         "baseHost": "",
         "statHost": "",
         "eHost": "",
@@ -97,8 +97,8 @@
       </footer>
     </body>
   </body>
-  <script src="<?php echo _STATIC_ ?>/libs/dist/jquery/dist/jquery.js" type="text/javascript"></script>
-  <script src="<?php echo _STATIC_ ?>/libs/dist/yosonjs/dist/yoson.js" type="text/javascript"></script>
-  <script src="<?php echo _STATIC_ ?>/js/dist/scripts/<?php echo _MODULE_ ?>/<?php echo _VIEW_ ?>.js" type="text/javascript"></script>
-  <script src="<?php echo _STATIC_ ?>/js/dist/libs/yosonjs-utils.js" type="text/javascript"></script>
+  <script src="<?php echo $this->staticUrl ?>/libs/dist/jquery/dist/jquery.js" type="text/javascript"></script>
+  <script src="<?php echo $this->staticUrl ?>/libs/dist/yosonjs/dist/yoson.js" type="text/javascript"></script>
+  <script src="<?php echo $this->staticUrl ?>/js/dist/scripts/<?php echo $this->module ?>/<?php echo $this->action ?>.js" type="text/javascript"></script>
+  <script src="<?php echo $this->staticUrl ?>/js/dist/libs/yosonjs-utils.js" type="text/javascript"></script>
 </html>
